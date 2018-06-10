@@ -2,6 +2,9 @@ FROM ubuntu:latest
 
 MAINTAINER Artyom V. Poptsov <poptsov.artyom@gmail.com>
 
+RUN echo "America/New_York" > /etc/timezone
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+
 ### Install basic packages.
 RUN apt-get update -qq && apt-get -qqy install \
     wget \
@@ -9,12 +12,23 @@ RUN apt-get update -qq && apt-get -qqy install \
     libmono-system-windows-forms4.0-cil \
     libgtk2.0-0 \
     libmono-system-serviceprocess4.0-cil \
-    libglew1.1
+    libglew2.0
+
+### Install dependencies for Slic3r.
+RUN apt -qqy install \
+    libsm6 \
+    freeglut3 \
+    libglu1-mesa \
+    libxmu6
 
 ### Install RepetierHost
 WORKDIR /opt/
 RUN wget http://download.repetier.com/files/host/linux/repetierHostLinux_2_1_2.tgz
 
 RUN tar --gzip --extract -f repetierHostLinux_2_1_2.tgz
+
+RUN wget https://dl.slic3r.org/linux/slic3r-linux-x86_64-1-2-9-stable.tar.gz
+
+RUN tar --gzip --extract -f slic3r-linux-x86_64-1-2-9-stable.tar.gz
 
 WORKDIR /opt/RepetierHost/
