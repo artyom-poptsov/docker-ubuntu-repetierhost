@@ -23,11 +23,13 @@ RUN apt -qqy install \
 
 ### Install RepetierHost
 WORKDIR /opt/
-RUN wget http://download.repetier.com/files/host/linux/repetierHostLinux_2_1_2.tgz
+RUN wget --quiet \
+    http://download.repetier.com/files/host/linux/repetierHostLinux_2_1_2.tgz
 
 RUN tar --gzip --extract -f repetierHostLinux_2_1_2.tgz
 
-RUN wget https://dl.slic3r.org/linux/slic3r-linux-x86_64-1-2-9-stable.tar.gz
+RUN wget --quiet \
+    https://dl.slic3r.org/linux/slic3r-linux-x86_64-1-2-9-stable.tar.gz
 
 RUN tar --gzip --extract -f slic3r-linux-x86_64-1-2-9-stable.tar.gz
 
