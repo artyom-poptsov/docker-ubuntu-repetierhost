@@ -1,0 +1,13 @@
+* An Ubuntu GNU/Linux image with RepetierHost
+
+This is an Ubuntu GNU/Linux Docker image with [[https://www.repetier.com/][RepetierHost]] and [[http://slic3r.org/][Slic3r]]
+preinstalled along with all dependencies.
+
+** Running a container
+
+#+BEGIN_EXAMPLE
+docker run --rm -e DISPLAY=$DISPLAY \
+  -v $PWD/root:/root:rw \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  --privileged -it avvp/ubuntu-repetierhost
+#+END_EXAMPLE
