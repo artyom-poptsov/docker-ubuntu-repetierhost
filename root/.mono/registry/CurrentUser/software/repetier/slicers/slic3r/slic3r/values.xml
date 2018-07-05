@@ -1,10 +1,10 @@
 <values>
+<value name="version"
+type="int">4</value>
+<value name="executable"
+type="string">/opt/Slic3rPE-1.40.0+linux64-full-201806121015/slic3r</value>
 <value name="showPlater"
 type="int">0</value>
-<value name="executable"
-type="string">/opt/Slic3r/bin/slic3r</value>
 <value name="configDir"
 type="string"/>
-<value name="version"
-type="int">3</value>
 </values>
