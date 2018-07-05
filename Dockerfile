@@ -36,8 +36,8 @@ RUN wget --quiet \
 RUN tar --gzip --extract -f slic3r-linux-x86_64-1-2-9-stable.tar.gz
 
 RUN wget --quiet \
-    https://github.com/prusa3d/Slic3r/releases/download/version_1.40.0/Slic3rPE-1.40.0.linux64-full-201806121015.tar.bz2
+    https://github.com/prusa3d/Slic3r/releases/download/version_1.40.1-rc2/Slic3rPE-1.40.1-rc2.linux64-full-201807031509.tar.bz2
 
-RUN tar --bzip --extract -f Slic3rPE-1.40.0.linux64-full-201806121015.tar.bz2
+RUN tar --bzip --extract -f Slic3rPE-1.40.1-rc2.linux64-full-201807031509.tar.bz2
 
 WORKDIR /opt/RepetierHost/
